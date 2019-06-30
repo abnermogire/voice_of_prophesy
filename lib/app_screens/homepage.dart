@@ -40,7 +40,7 @@ class homepageState extends State<homepage> {
           child: ListTile(
             leading: Icon(Icons.accessibility,),
             title: Text("Spiritual Materials"),
-            subtitle: Text("Literature,music,sermons,etc"),
+            subtitle: Text("Literature materials,music,sermons,etc"),
             trailing: Icon(Icons.archive,),
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
