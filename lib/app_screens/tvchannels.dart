@@ -13,7 +13,7 @@ class tvchannelsState extends StatelessWidget{
       appBar: AppBar(
         title: Text("My Tv Channels"),
       ),
-      body: Text("hey there"),
+      body: Text("Hey there"),
     );
   }
 }
