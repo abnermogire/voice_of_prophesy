@@ -4,7 +4,7 @@ import 'package:voice_of_prophesy/app_screens/announcements.dart';
 import 'package:voice_of_prophesy/app_screens/notepad.dart';
 import 'package:voice_of_prophesy/app_screens/spiritualmaterials.dart';
 import 'package:voice_of_prophesy/app_screens/askquestions.dart';
-import 'package:voice_of_prophesy/app_screens/discover_guides.dart';
+import 'package:voice_of_prophesy/app_screens/guides_initialpage.dart';
 
 
 class homepage extends StatefulWidget{
@@ -18,15 +18,16 @@ class homepageState extends State<homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: getListView(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return tvchannels();
-          }));
-        },
-        tooltip: "Choose a TV channel you want to watch",
-        child: Icon(Icons.tv),
+      body: Stack(
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("images/homepage.jpg"),
+                    fit: BoxFit.cover)),
+          ),
+          getListView()
+        ],
       ),
     );
   }
@@ -53,13 +54,12 @@ class homepageState extends State<homepage> {
           color: Colors.white,
           elevation: 2.0,
           child: ListTile(
-            leading: Icon(Icons.menu),
+            leading: Icon(Icons.collections),
             title: Text("Discover Guides"),
             subtitle: Text("Do Discover guides"),
-            trailing: Icon(Icons.edit,),
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return guides();
+                return guidesInitialpage();
               }));
             },
           ),
@@ -107,6 +107,20 @@ class homepageState extends State<homepage> {
             },
           ),
         ),
+        Card(
+          color: Colors.white,
+          elevation: 2.0,
+          child: ListTile(
+            leading: tvImageAsset(),
+            title: Text("My Tv Channels"),
+            subtitle: Text("channels"),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return tvchannels();
+              }));
+            },
+          ),
+        ),
       ],
     );
     return listView;
@@ -116,6 +130,14 @@ class guidesImageAsset extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     AssetImage assetImage=AssetImage('images/guides.jpg');
+    Image image=Image(image: assetImage,);
+    return Container(child: image);
+  }
+}
+class tvImageAsset extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    AssetImage assetImage=AssetImage('images/channels.jpg');
     Image image=Image(image: assetImage,);
     return Container(child: image);
   }
