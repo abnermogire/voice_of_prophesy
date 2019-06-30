@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
 class guides extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return WebviewScaffold(
       appBar: AppBar(
         title: Text("Do Discover Guides"),
       ),
-      body: Text("hey there"),
+      url:"http://www.bibleschools.com/",
+      withZoom: true,
     );
   }
 }
