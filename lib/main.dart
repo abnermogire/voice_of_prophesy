@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import './app_screens/homepage.dart';
+import './app_screens/first_screen.dart';
 
 void main ()=>runApp(new myVopApp());//runApp
 
@@ -12,7 +12,7 @@ class myVopApp extends StatelessWidget{
         theme: ThemeData(
             primarySwatch: Colors.red
         ),
-        home:homepage()
+        home:firstScreen()
     );
   }
 }

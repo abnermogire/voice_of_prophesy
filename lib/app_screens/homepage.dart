@@ -18,8 +18,6 @@ class homepageState extends State<homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("my homepage"),
-      ),
       body: getListView(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
