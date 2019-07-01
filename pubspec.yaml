@@ -50,6 +50,10 @@ flutter:
     - images/firstpage.jpg
     - images/homepage.jpg
     - images/channels.jpg
+    - images/2cbn.jpg
+    - images/3ABN.png
+    - images/amazing-facts.jpg
+    - images/hck.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
